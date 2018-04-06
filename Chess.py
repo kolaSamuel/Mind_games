@@ -2,12 +2,14 @@ from collections import Counter
 import sys
 
 sys.setrecursionlimit(50000)
-
+########################################
+#            CHESS 2                   #
 length, breadth = 4, 5
 black, white = Counter(), Counter()
 for i in range(length):
     black[(i, 0)] = 1
     white[(i, breadth-1)] = 1
+########################################
 
 solution = []
 seen = set()
