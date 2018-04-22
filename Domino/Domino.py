@@ -1,7 +1,7 @@
 import json
 import sys
 
-level = "Domino 1"
+level = "Domino 2"
 with open("game_state.json") as file:
     data = json.load(file)
 
