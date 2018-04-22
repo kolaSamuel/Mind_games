@@ -1,0 +1,12 @@
+{
+  "Domino 1":{
+    "length": 4,
+    "breadth": 2,
+    "goal": 6
+  },
+  "Domino 2":{
+    "length": 6,
+    "breadth": 3,
+    "goal": 13
+  }
+}
