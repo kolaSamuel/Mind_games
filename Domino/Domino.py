@@ -1,6 +1,12 @@
+"""
+    Re-run if it doesn't solve in 10 seconds
+    Might need to run program more than once typically < 5.
+"""
+
 import json
 from collections import defaultdict
 from itertools import combinations as combine
+from random import shuffle
 import sys
 
 level = "Domino 2"
@@ -19,6 +25,12 @@ game_state = []
 game_state_set = set()
 count = 0
 pieces = data["General"]["pieces"]
+# pieces.sort(reverse=True)
+
+# MOST IMPORTANT LINE OF CODE, DO NOT CHANGE
+shuffle(pieces)
+# ******************************************
+
 checker = breadth/2
 combinations = dict()
 new_pieces = set()
@@ -34,7 +46,7 @@ def to_tuple(x):
 for x in pieces:
     new_pieces.add(to_tuple(x))
 
-for comb in range(1, length+1):
+for comb in range(1, breadth+1):
     combinations[comb] = defaultdict(list)
     for combs in combine(new_pieces, comb):
         x = sum([sum(x) for x in combs])
@@ -121,7 +133,7 @@ def back_track():
     return False
 
 
-# back_track()
+back_track()
 # print(diagonal_positions, sep="\n")
 print('\n', game_state)
 print('h: ', horizontal)
