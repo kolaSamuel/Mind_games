@@ -9,7 +9,7 @@ from itertools import combinations as combine
 from random import shuffle
 import sys
 
-level = "Domino 2"
+level = "Domino 1"
 with open("game_state.json") as file:
     data = json.load(file)
 
@@ -34,6 +34,10 @@ shuffle(pieces)
 checker = breadth/2
 combinations = dict()
 new_pieces = set()
+
+
+def get_game_state():
+    return game_state
 
 
 def to_tuple(x):
@@ -133,9 +137,10 @@ def back_track():
     return False
 
 
-back_track()
-# print(diagonal_positions, sep="\n")
-print('\n', game_state)
-print('h: ', horizontal)
-print('v: ', vertical)
-print('d: ', diagonal)
+if __name__ == "__main__":
+    back_track()
+    # print(diagonal_positions, sep="\n")
+    print('\n', game_state)
+    print('h: ', horizontal)
+    print('v: ', vertical)
+    print('d: ', diagonal)
