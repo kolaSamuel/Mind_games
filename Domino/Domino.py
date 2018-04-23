@@ -1,5 +1,5 @@
 """
-    Re-run if it doesn't solve in 10 seconds
+    Re-run if it doesn't solve in 5 minutes
     Might need to run program more than once typically < 5.
 """
 
