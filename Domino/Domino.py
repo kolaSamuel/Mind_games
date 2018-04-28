@@ -9,7 +9,7 @@ from itertools import combinations as combine
 from random import shuffle
 import sys
 
-level = "Domino 1"
+level = "Domino 3"
 with open("game_state.json") as file:
     data = json.load(file)
 
@@ -62,7 +62,11 @@ diagonal = [0]*2
 
 
 def forward_checking(pos):
-    global count
+    """
+        Uses forward checking to speed up CSP
+    :param pos: current filled position
+    :return: True if forward checking passed, False otherwise
+    """
     horizontal_check = pos % length
     vertical_check = breadth - (pos//length)
 
@@ -76,14 +80,18 @@ def forward_checking(pos):
             index = right
         if index == 0 or any(x.isdisjoint(game_state_set) for x in combinations[index][target]):
             continue
-        # count += 1
-        # if count%1000 == 0:
-        #     print(count)
         return False
     return True
 
 
 def valid(x, f=1):
+    """
+    Checks if the piece placed violates any constrain in the CSP
+    :param x: current piece to be placed
+    :param f: 1 if chip is being placed -1 if it is being removed
+    :return: True of False values
+    """
+
     # Maths to determine positions
     size = len(game_state)
     h = (size//length)*2
@@ -121,6 +129,10 @@ def valid(x, f=1):
 
 
 def back_track():
+    """
+    DFS which solves CSP
+    :return: True if path possible, False if not
+    """
     for x in pieces:
         y = x[::-1]
         z = to_tuple(x)

@@ -9,6 +9,11 @@
     "breadth": 3,
     "goal": 13
   },
+  "Domino 3": {
+    "length": 6,
+    "breadth": 3,
+    "goal": 14
+  },
   "General": {
     "pieces": [
       [0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5],
