@@ -1,4 +1,5 @@
 {
+  "heuristic": true,
   "legal_moves":[
     [0, 2, "right"],
     [0, -2, "left"],
