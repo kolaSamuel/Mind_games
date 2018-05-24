@@ -73,3 +73,4 @@ for x in all_pieces:
     piece_index = str(x)
     piece_children[x] = rotations(pieces[piece_index])
 
+print('done')
