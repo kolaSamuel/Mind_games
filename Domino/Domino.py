@@ -9,7 +9,7 @@ from itertools import combinations as combine
 from random import shuffle
 import sys
 
-level = "Domino 3"
+level = "Domino 4"
 with open("game_state.json") as file:
     data = json.load(file)
 

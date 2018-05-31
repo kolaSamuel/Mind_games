@@ -1,6 +1,6 @@
 import json
 game_piece = 1
-level = "Checkers 1"
+level = "Checkers 2"
 with open("game_state.json") as file:
     data = json.load(file)
 
